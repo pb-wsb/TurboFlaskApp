@@ -47,4 +47,4 @@ jobs:
       env:
         DATABASE_URL: postgres://testuser:testpassword@localhost:5432/testdb
       run: |
-        ls
+        pytest --cov=app
