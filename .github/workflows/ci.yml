@@ -29,7 +29,5 @@ jobs:
         pip install pytest pytest-cov
 
     - name: Run tests
-      env:
-        DATABASE_URL: postgres://testuser:testpassword@localhost:5432/testdb
       run: |
         pytest --cov=app
