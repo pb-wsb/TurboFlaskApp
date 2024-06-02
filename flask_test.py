@@ -1,6 +1,6 @@
 import pytest
 
-from FlaskApp.TurboFlaskApp.app import app
+from app import app
 
 
 @pytest.fixture
