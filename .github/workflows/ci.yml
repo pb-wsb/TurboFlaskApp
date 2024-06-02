@@ -13,21 +13,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_USER: testuser
-          POSTGRES_PASSWORD: testpassword
-          POSTGRES_DB: testdb
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -44,7 +29,5 @@ jobs:
         pip install pytest pytest-cov
 
     - name: Run tests
-      env:
-        DATABASE_URL: postgres://testuser:testpassword@localhost:5432/testdb
       run: |
-        ls
+        pytest --cov=app
