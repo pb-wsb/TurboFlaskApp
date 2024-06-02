@@ -1,6 +1,6 @@
 import pytest
 
-from app import app
+from TurboFlaskApp.TurboFlaskApp.app import app
 
 
 @pytest.fixture
